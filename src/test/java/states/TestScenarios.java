@@ -66,7 +66,7 @@ public class TestScenarios {
 	  assertEquals("value of totalTime ", 1, AbstractStopwatch.getTotalTime());
 	  assertEquals("value of lapTime ", 0, AbstractStopwatch.getLapTime());
 	 
-	  c.up(); // record stopwatch laptime
+	  c.up(); // record stopwatch Laptime
 	  c.tick();
 	  assertSame(LaptimeStopwatch.Instance(), c.currentState);
 	  assertEquals("value of totalTime ", 2, AbstractStopwatch.getTotalTime());

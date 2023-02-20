@@ -26,7 +26,7 @@ public class StopwatchTests {
 	public void testInitialState() {
 		//context.tick(); //no tick() needed for this test;
 		/* When initialising the context (see setup() method above)
-		 * its currentState will be inialised with the initial state
+		 * its currentState will be initialised with the initial state
 		 * of timer, i.e. the IdleTimer state.
 		 */
 		current = context.currentState;
