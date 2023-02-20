@@ -1,7 +1,9 @@
 package gui;
 
-import static org.junit.Assert.*;
-import org.junit.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class TestStopwatchLabels extends TestGUIAbstract {
 
@@ -17,7 +19,7 @@ public class TestStopwatchLabels extends TestGUIAbstract {
     	assertEquals("ResetStopwatch",g.myText3.getText());
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void testStopwatch2() {
     	c.left(); //simulate clicking on the left button
     	c.up(); //simulate clicking on the right button

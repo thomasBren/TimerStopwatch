@@ -1,55 +1,58 @@
 package gui;
 
-import static org.junit.Assert.*;
+
+
+import org.junit.jupiter.api.Test;
 import states.timer.*;
 
-import org.junit.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class TestTimerLabels extends TestGUIAbstract {
 
-	@Test
+	@org.junit.jupiter.api.Test
 	public void testIdleTimerLabels() {
 		c.currentState = IdleTimer.Instance();
 		g.updateUI(c);
-		assertEquals("button 1 for state IdleTimer ", g.b1.getText(),c.getLeftText());
-		assertEquals("button 2 for state IdleTimer ", g.b2.getText(),c.getUpText());
-		assertEquals("button 3 for state IdleTimer ", g.b3.getText(),c.getRightText());
+		assertEquals( g.b1.getText(),c.getLeftText(),"button 1 for state IdleTimer ");
+		assertEquals( g.b2.getText(),c.getUpText(),"button 2 for state IdleTimer ");
+		assertEquals( g.b3.getText(),c.getRightText(),"button 3 for state IdleTimer ");
 	}
 	
-	@Test
+	@org.junit.jupiter.api.Test
 	public void testPausedTimerLabels() {
 		c.currentState = PausedTimer.Instance();
 		g.updateUI(c);
-		assertEquals("button 1 for state PausedTimer ", g.b1.getText(),c.getLeftText());
-		assertEquals("button 2 for state IdleTimer ", g.b2.getText(),c.getUpText());
-		assertEquals("button 3 for state IdleTimer ", g.b3.getText(),c.getRightText());
+		assertEquals( g.b1.getText(),c.getLeftText(),"button 1 for state PausedTimer ");
+		assertEquals( g.b2.getText(),c.getUpText(),"button 2 for state IdleTimer ");
+		assertEquals( g.b3.getText(),c.getRightText(),"button 3 for state IdleTimer ");
 	}
 	
-	@Test
+	@org.junit.jupiter.api.Test
 	public void testRingingTimerLabels() {
 		c.currentState = RingingTimer.Instance();
 		g.updateUI(c);
-		assertEquals("button 1 for state RingingTimer ", g.b1.getText(),c.getLeftText());
-		assertEquals("button 2 for state RingingTimer ", g.b2.getText(),c.getUpText());
-		assertEquals("button 3 for state RingingTimer ", g.b3.getText(),c.getRightText());
+		assertEquals( g.b1.getText(),c.getLeftText(),"button 1 for state RingingTimer ");
+		assertEquals( g.b2.getText(),c.getUpText(),"button 2 for state RingingTimer ");
+		assertEquals( g.b3.getText(),c.getRightText(),"button 3 for state RingingTimer ");
 	}
 	
-	@Test
+	@org.junit.jupiter.api.Test
 	public void testRunningTimerLabels() {
 		c.currentState = RunningTimer.Instance();
 		g.updateUI(c);
-		assertEquals("button 1 for state RunningTimer ", g.b1.getText(),c.getLeftText());
-		assertEquals("button 2 for state RunningTimer ", g.b2.getText(),c.getUpText());
-		assertEquals("button 3 for state RunningTimer ", g.b3.getText(),c.getRightText());
+		assertEquals( g.b1.getText(),c.getLeftText(),"button 1 for state RunningTimer ");
+		assertEquals( g.b2.getText(),c.getUpText(),"button 2 for state RunningTimer ");
+		assertEquals( g.b3.getText(),c.getRightText(),"button 3 for state RunningTimer ");
 	}
 	
-	@Test
+	@org.junit.jupiter.api.Test
 	public void testSetTimerLabels() {
 		c.currentState = SetTimer.Instance();
 		g.updateUI(c);
-		assertEquals("button 1 for state SetTimer ", g.b1.getText(),c.getLeftText());
-		assertEquals("button 2 for state SetTimer ", g.b2.getText(),c.getUpText());
-		assertEquals("button 3 for state SetTimer ", g.b3.getText(),c.getRightText());
+		assertEquals( g.b1.getText(),c.getLeftText(),"button 1 for state SetTimer ");
+		assertEquals( g.b2.getText(),c.getUpText(),"button 2 for state SetTimer ");
+		assertEquals( g.b3.getText(),c.getRightText(),"button 3 for state SetTimer ");
 	}
 	
 	   @Test
@@ -63,7 +66,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	    	assertEquals("memTimer = 0",g.myText1.getText());
 	    }
 
-	@Test
+	@org.junit.jupiter.api.Test
 	    public void testTimerButtonLabels2() {
 	    	c.right(); //simulate clicking on the left button
 	    	g.updateUI(c); //apply the effect on the user interface
@@ -75,7 +78,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	    	assertEquals("memTimer = 0",g.myText1.getText());
 	    }
 
-	    @Test
+	    @org.junit.jupiter.api.Test
 	    public void testStopwatchButtonLabels1() {
 	    	c.left(); //simulate clicking on the left button
 	    	g.updateUI(c); //apply the effect on the user interface
@@ -84,7 +87,7 @@ public class TestTimerLabels extends TestGUIAbstract {
 	    	assertEquals("(unused)",g.b3.getText());
 	    }
 
-	    @Test
+	    @org.junit.jupiter.api.Test
 	    public void testStopwatchButtonLabels2() {
 	    	c.left(); //simulate clicking on the left button
 	    	c.up(); //simulate clicking on the right button
