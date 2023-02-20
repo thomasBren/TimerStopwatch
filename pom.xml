@@ -16,6 +16,7 @@
     <maven.surefire.version>2.22.2</maven.surefire.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <jacoco.version>0.8.8</jacoco.version>
   </properties>
 
   <dependencies>
@@ -44,6 +45,34 @@
             <includes>
               <include>**/*.java</include>
             </includes>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
+          <executions>
+            <!--configures testing coverage-->
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+
+            <!--generates report in target/site/jacoco-->
+            <execution>
+              <id>report</id>
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <excludes>
+              <exclude>calculator/Main.class</exclude>
+            </excludes>
           </configuration>
         </plugin>
 

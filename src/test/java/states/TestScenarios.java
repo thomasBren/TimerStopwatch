@@ -25,7 +25,8 @@ public class TestScenarios {
   public void completeScenario() {
 	  assertEquals(IdleTimer.Instance(),c.currentState);
 	  assertEquals(0,AbstractTimer.getMemTimer());
-	  
+
+
 	  c.right(); // start incrementing the memTimer variable
 	  c.tick();
 	  assertSame(SetTimer.Instance(),c.currentState);
@@ -65,12 +66,15 @@ public class TestScenarios {
 	  assertSame(RunningStopwatch.Instance(), c.currentState);
 	  assertEquals("value of totalTime ", 1, AbstractStopwatch.getTotalTime());
 	  assertEquals("value of lapTime ", 0, AbstractStopwatch.getLapTime());
-	 
+
+
 	  c.up(); // record stopwatch Laptime
 	  c.tick();
 	  assertSame(LaptimeStopwatch.Instance(), c.currentState);
 	  assertEquals("value of totalTime ", 2, AbstractStopwatch.getTotalTime());
 	  assertEquals("value of lapTime ", 1, AbstractStopwatch.getLapTime());
+	  assertEquals(c.getUpText(),"unsplit");
+	  assertEquals(c.getDisplayText(),"lapTime = 1");
 	  
 	  c.left(); // go back to timer mode (remembering history state)
 	  c.tick();
