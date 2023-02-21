@@ -56,10 +56,11 @@ public class StopwatchTests {
 		current = LaptimeStopwatch.Instance();
 		current.entry();
 		current=current.doIt();
-		current=current.doIt();
-		current=current.doIt();
-		current=current.doIt();
+		assertEquals(LaptimeStopwatch.Instance(), current);
 
+		current=current.doIt();
+		current=current.doIt();
+		current=current.doIt();
 		assertEquals(RunningStopwatch.Instance(), current=current.doIt());
 	}
 	
