@@ -3,7 +3,9 @@ package states;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import states.stopwatch.AbstractStopwatch;
+import states.stopwatch.LaptimeStopwatch;
 import states.stopwatch.ResetStopwatch;
+import states.stopwatch.RunningStopwatch;
 import states.timer.AbstractTimer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,6 +42,25 @@ public class StopwatchTests {
 	public void testInitialAbstractStopwatch() {
 		// The initial state of composite state AbstractStopwatch should be ResetStopwatch
 		assertSame(AbstractStopwatch.Instance(), ResetStopwatch.Instance());
+	}
+
+	@org.junit.jupiter.api.Test
+	public void testUp(){
+		current = LaptimeStopwatch.Instance();
+		ClockState newState = current.up();
+		assertEquals(RunningStopwatch.Instance(), newState);
+	}
+
+	@org.junit.jupiter.api.Test
+	public void testDoIt(){
+		current = LaptimeStopwatch.Instance();
+		current.entry();
+		current=current.doIt();
+		current=current.doIt();
+		current=current.doIt();
+		current=current.doIt();
+
+		assertEquals(RunningStopwatch.Instance(), current=current.doIt());
 	}
 	
 	@org.junit.jupiter.api.Test

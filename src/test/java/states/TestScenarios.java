@@ -78,6 +78,8 @@ public class TestScenarios {
 	  assertEquals( 1, AbstractStopwatch.getLapTime(),"value of lapTime ");
 	  assertEquals(c.getUpText(),"unsplit");
 	  assertEquals(c.getDisplayText(),"lapTime = 1");
+
+
 	  
 	  c.left(); // go back to timer mode (remembering history state)
 	  c.tick();
